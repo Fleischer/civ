@@ -1,0 +1,29 @@
+{% extends "regtr/base.html" %}
+{% block content %}
+{% if logged_in %}
+		<a href='/reg/logout'><input type="submit" value="Logout" /></a><br/>
+		Hello, {{ user }}
+                        <ul>
+                            <a href="/list"><li>
+								<div>Structures</div>
+                            </li></a>
+							<a href='/search'><li>
+								<div>Search</div>
+                            </li></a>
+							<a href='/purchase'><li>
+								<div>Purchase</div>
+                            </li></a>
+							<a href='/contactus'><li>
+								<div>Contact Us</div>
+                            </li></a>
+                        </ul>
+{% else %}
+	<p>Welcome new user, Please login.</p>
+	<div><form action="." method="post">
+			{{ form.as_p }}
+			<input type="submit" value="Login" />
+		</form>
+	</div>
+{% endif %}
+{% endblock %}
+

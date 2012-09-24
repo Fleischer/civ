@@ -1,0 +1,13 @@
+{% extends "civ/base.html" %}
+{% block content %}
+<a href='/mobile/'><input type="submit" value="Home" /></a><br/>
+
+<div>Name: {{ name }}</div>
+<div>Email: {{ email }}</div>
+<div>Phone number: {{ phone }}</div>
+<div>Structure: {{ structure }}</div>
+<div>Amount: GHC {{ amount }}</div>
+<div>Date of Investment: {{ date }}</div>
+<div>Time of Investment: {{ time }}</div>
+{% endblock %}
+

@@ -1,0 +1,9 @@
+{% extends "civ/base.html" %}
+{% block content %}
+<a align="center" href='/mobile/'><input data-role="button" data-inline="true" style="width:20%" type="submit" value="Back" /></a>
+<a align="center" href='/mobile/'><input data-role="button" data-inline="true" style="width:20%" type="submit" value="Home" /></a><br/>
+	{% for struc in struc_list %}
+		<a href='/mobile/structure/{{struc.id}}' data-role="button" data-theme="b"><div> {{ struc }} </div></a>
+	{% endfor %}
+{% endblock %}
+

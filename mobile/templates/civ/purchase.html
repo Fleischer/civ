@@ -1,0 +1,12 @@
+{% extends "civ/base.html" %}
+{% block content %}
+<a href='/mobile/'><input type="submit" value="Home" /></a><br/>
+<h3>{{ structure }}</h3>
+<h4>{{ product }}</h4>
+	<form method='post' action="">
+		{{ form }}
+		<input type='submit' name='Submit' value='Purchase'>
+	</form>
+
+{% endblock %}
+

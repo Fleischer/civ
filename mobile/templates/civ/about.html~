@@ -1,0 +1,8 @@
+{% extends "civ/base.html" %}
+{% block content %}
+<div><b>Cosmos Impact Ventures (CIV)</b> is a new and thriving business organization aimed at impacting the world positively with the intention of providing impeccable business services to delight our clientele.</div><br />
+<div>Our impetus comes from the notion that success in business is attained by those who set out to make the lives of people better.</div><br />
+<div>Because of this, CIV is therefore poised to be established in all the major industries. Presently, we provide products and services in marketing, fashion design, animal husbandry, art, and multimedia.</div><br />
+<div>We also connect people to credible minerals suppliers for transactions.</div>
+{% endblock %}
+

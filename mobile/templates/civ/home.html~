@@ -1,0 +1,49 @@
+{% extends "civ/base.html" %}
+{% block content %}
+	<form action="/search/" method="GET">
+		<div data-role="fieldcontain">
+		<label for="search" style="font-family:'Brush Script MT', cursive; font-size:20px">Search for a Product or Company </label>
+		<input type="search" name="search" value="{{ term|escape }}" style="width:60%">
+		<input type="submit" value="Search" data-role="button" data-theme="e" style="width:10%">
+		</div>
+	</form>
+{% if term %}
+	{% if results %}
+		{% for result in results %}
+			<a data-role="button" data-theme="c" href='/structure/{{result.id}}'><div>{{ result|escape }}</div></a>
+		{% endfor %}
+	{% endif %}
+	{% if products %}
+		{% for prod in products %}
+			<a href='/product-detail/{{prod.id}}'><div>{{ prod|escape }}</div></a>
+		{% endfor %}
+	{% endif %}
+	{% if not results and not products %}
+	<p>No Structures or Products found</p>
+	{% endif %}
+{% endif %}
+                        <ul data-role="listview" data-inset="true">
+                            <li><a href="/mobile/list">
+								<div>Structures</div>
+                            </a></li>
+							<li><a href='/mobile/purchase'>
+								<div>Purchase</div>
+                            </a></li>
+							<li><a href='/mobile/affiliate'>
+								<div>Affiliate Programme</div>
+                            </a></li>
+							<li><a href='/mobile/contact_us'>
+								<div>Advertise with CIV</div>
+                            </a></li>
+							<li><a href='/mobile/invest'>
+								<div>Invest in CIV</div>
+                            </a></li>
+							<li><a href='/mobile/comment'>
+								<div>Comments</div>
+                            </a></li>
+							<li><a href='/mobile/about_us'>
+								<div>About Us</div>
+                            </a></li>
+                        </ul>
+{% endblock %}
+

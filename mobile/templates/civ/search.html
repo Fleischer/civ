@@ -1,0 +1,26 @@
+{% extends "civ/base.html" %}
+{% block content %}
+<a href='/mobile/'><input type="submit" value="Home" /></a>
+
+	<form action="." method="GET">
+		<label for="q">Search: </label>
+		<input type="text" name="q" value="{{ term|escape }}">
+		<input type="submit" value="Search">
+	</form>
+{% if term %}
+	{% if results %}
+		{% for result in results %}
+			<a href='/mobile/structure/{{result.id}}'><div>{{ result|escape }}</div></a>
+		{% endfor %}
+	{% endif %}
+	{% if products %}
+		{% for prod in products %}
+			<a href='/mobile/product-detail/{{prod.id}}'><div>{{ prod|escape }}</div></a>
+		{% endfor %}
+	{% endif %}
+	{% if not results and not products %}
+	<p>No Structures or Products found</p>
+	{% endif %}
+{% endif %}
+{% endblock %}
+
